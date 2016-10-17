@@ -21,6 +21,7 @@ class Led
 private:
     bool mode;
     uint8_t pinNumber;
+    Led();
    
 public:
     // Member functions declaration
@@ -64,12 +65,12 @@ int main (void){
 	
 	Led led1;
 	
-    printf("1.) Pin Number %u is set to %s \n",led1.getPinNumber(),  (char *)led1.getMode(); );
+    cout << "1.) Pin Number "<< led1.getPinNumber() << " is set to " << led1.getMode()<<"\n";
 
     led1.setMode(TRUE);
     led1.setPinNumber(10);
 
-    printf("2.) Pin Number %u is set to %s \n",led1.getPinNumber(),  (char *)led1.getMode(); );
-	
+    cout << "2.) Pin Number "<< led1.getPinNumber() << " is set to " << led1.getMode()<<"\n";	
+
     return 0;
 }
