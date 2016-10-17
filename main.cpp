@@ -21,14 +21,15 @@ class Led
 private:
     bool mode;
     uint8_t pinNumber;
-    Led();
+    
    
 public:
     // Member functions declaration
-      bool getMode(void);
-      void setMode( bool m );
-      uint8_t getPinNumber( void );
-      void setPinNumber( uint8_t p );
+    Led();
+    bool getMode(void);
+    void setMode( bool m );
+    uint8_t getPinNumber( void );
+    void setPinNumber( uint8_t p );
 };
 
 // Member functions definitions
