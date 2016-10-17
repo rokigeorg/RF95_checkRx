@@ -38,8 +38,11 @@ Led::Led(void){
     cout << "Create an Led.\n";
     wiringPiSetup();
 
+    pinMode(10, OUTPUT);
+    digitalWrite(10,LOW);
+
     mode = false;
-    pinNumber = 0;
+    pinNumber = 10;
 
 }
 
@@ -50,6 +53,7 @@ bool Led::getMode(void)
 
 void Led::setMode( bool m ){
     mode = m;
+    if(mode)? digitalWrite(pinNumber,HIGH) :digitalWrite(pinNumber,LOW) ;
 }
 
 uint8_t Led::getPinNumber( void ){
@@ -66,12 +70,20 @@ int main (void){
 	
 	Led led1;
 	
-    cout << "1.) Pin Number "<< led1.getPinNumber() << " is set to " << led1.getMode()<<"\n";
+    cout << "1.) Pin Number "<< (char *)led1.getPinNumber() << " is set to " << led1.getMode()<<"\n";
 
     led1.setMode(TRUE);
     led1.setPinNumber(10);
 
-    cout << "2.) Pin Number "<< led1.getPinNumber() << " is set to " << led1.getMode()<<"\n";	
+    cout << "2.) Pin Number "<< (char *) led1.getPinNumber() << " is set to " << led1.getMode()<<"\n";	
+
+
+    while(1){
+        led1.setMode(FALSE);
+        delay(500);
+        led1.setMode(TRUE);
+        delay(500);
+    }
 
     return 0;
 }
