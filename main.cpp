@@ -35,7 +35,7 @@ public:
 // Member functions definitions
 
 Led::Led(void){
-    cout << "Create an Led."
+    cout << "Create an Led.\n";
     wiringPiSetup();
 
     mode = false;
