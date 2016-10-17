@@ -53,7 +53,7 @@ bool Led::getMode(void)
 
 void Led::setMode( bool m ){
     mode = m;
-    if(mode)? digitalWrite(pinNumber,HIGH) :digitalWrite(pinNumber,LOW) ;
+    (mode)? digitalWrite(pinNumber,HIGH) :digitalWrite(pinNumber,LOW) ;
 }
 
 uint8_t Led::getPinNumber( void ){
@@ -70,12 +70,12 @@ int main (void){
 	
 	Led led1;
 	
-    cout << "1.) Pin Number "<< (char *)led1.getPinNumber() << " is set to " << led1.getMode()<<"\n";
+    cout << "1.) Pin Number "<< (char *) led1.getPinNumber() << " is set to " << led1.getMode()<<"\n";
 
     led1.setMode(TRUE);
     led1.setPinNumber(10);
 
-    cout << "2.) Pin Number "<< (char *) led1.getPinNumber() << " is set to " << led1.getMode()<<"\n";	
+    cout << "2.) Pin Number "<< (char *)led1.getPinNumber() << " is set to " << led1.getMode()<<"\n";	
 
 
     while(1){
